@@ -5,7 +5,9 @@
       <div class="__container__phone">
         <div class="message">
           <div class="title">Чем могу вам помочь ?</div>
+          <a href="tel:88432407717">
           <blue-button class="btn">Позвонить</blue-button>
+          </a>
         </div>
         <div class="phone" :style="{background: `url(${imagePhone}) center no-repeat`, backgroundSize: '100% 100%' }">
           <div class="wallpaper"
@@ -31,19 +33,19 @@
 
       <div class="list">
         <div class="item">
-          <img src="../assets/advantages/pointList.svg">
+          <img src="../../assets/advantages/pointList.svg">
           Схемотехники с опытом работы от 15 лет
         </div>
         <div class="item">
-          <img src="../assets/advantages/pointList.svg">
+          <img src="../../assets/advantages/pointList.svg">
           Аккредитация в качестве ИТ компании
         </div>
         <div class="item">
-          <img src="../assets/advantages/pointList.svg">
+          <img src="../../assets/advantages/pointList.svg">
           Осуществляем прямые поставки
         </div>
         <div class="item">
-          <img src="../assets/advantages/pointList.svg">
+          <img src="../../assets/advantages/pointList.svg">
           Собственное производство запчастей
         </div>
       </div>
@@ -51,60 +53,70 @@
 
 
     <div class="footer__content">
+      <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
       <section>
         <div class="icon__container">
-          <img src="../assets/advantages/chat%201.svg" />
+          <img src="../../assets/advantages/chat%201.svg" />
         </div>
         <h3 class="name">
           Ремонт бортового оборудования электротранспорта.
           Сотрудничество с КФУ в качестве индустриального партнера
         </h3>
       </section>
+      </aos-vue>
+      <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
       <section>
         <div class="icon__container">
-          <img src="../assets/advantages/Rectangle%20163.svg" />
+          <img src="../../assets/advantages/Rectangle%20163.svg" />
         </div>
         <h3 class="name">
           Производство запчастей для электротранспорта: трамваев, троллейбусов и поездов метро
         </h3>
       </section>
+      </aos-vue>
+      <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
       <section>
         <div class="icon__container">
-          <img src="../assets/advantages/Vector.svg" />
+          <img src="../../assets/advantages/Vector.svg" />
         </div>
         <h3 class="name">
           Массовое производство чехлов для рулей с подогревом для оптовых продаж (бренд Легенда-М)
         </h3>
       </section>
+      </aos-vue>
+      <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
       <section>
         <div class="icon__container">
-          <img src="../assets/advantages/Group%20298.svg" />
+          <img src="../../assets/advantages/Group%20298.svg" />
         </div>
         <h3 class="name">
           Разработка, внедрение и проектирование систем автоматизации на городском транспорте
         </h3>
       </section>
+      </aos-vue>
+      <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
       <section>
         <div class="icon__container">
-          <img src="../assets/advantages/Rectangle%20163.svg" />
+          <img src="../../assets/advantages/Rectangle%20163.svg" />
         </div>
         <h3 class="name">
           Автоматизация энергосистемы электротранспорта. Ремонт плат управления приводов поездов метро
         </h3>
       </section>
+      </aos-vue>
     </div>
 
   </article>
 </template>
 
 <script>
-import imagePhone from '../assets/advantages/smart 1.png';
-import imageWallpaper from '../assets/advantages/Rectangle 8.png';
-import imageRectangle from '../assets/advantages/sirius6 1.png'
-import BlueButton from "./UI/BlueButton.vue";
-
+import imagePhone from '../../assets/advantages/smart 1.png';
+import imageWallpaper from '../../assets/advantages/Rectangle 8.png';
+import imageRectangle from '../../assets/advantages/sirius6 1.png'
+import BlueButton from "../UI/BlueButton.vue";
+import AosVue from "aos-vue";
 export default {
-  components: {BlueButton},
+  components: {BlueButton, AosVue},
   setup() {
     return {imagePhone, imageWallpaper, imageRectangle}
   }
@@ -112,8 +124,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+article{
+  height: 840px;
+}
 h2 {
   margin: 18px;
+  margin-top: 150px;
 }
 
 .header__content {
@@ -171,7 +187,7 @@ h2 {
 }
 
 .list {
-  max-width: 438px;
+  width: 438px;
   line-height: 150%;
   font-size: 14px;
   margin-top: 10px;
@@ -179,7 +195,6 @@ h2 {
   .title {
     margin-left: 25px;
     font-family: GothamBold, serif;
-    font-weight: 900;
     color: #34449C;
     font-size: 16px;
     line-height: 44px;
@@ -205,13 +220,38 @@ h2 {
     margin: 9px;
     padding: 32px 42px 0 32px ;
     font-family: GothamMedium,serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 23px;
-    box-shadow: 0 4px 100px 10px #BBA6FF78;
+    box-shadow: 0 4px 100px 30px rgba(208, 218, 227, 0.57);
     background: linear-gradient(#FFFFFF 0%, #F4F9FF 100%);
     .icon__container{
       margin-bottom: 19px;
     }
+  }
+}
+@media (max-width: 1024px) {
+  article{
+    height: 100%;
+    width: 100%;
+  }
+  .header__content{
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .__container__phone{
+    display: none;
+  }
+  .list {
+    width: 90%;
+  }
+  .footer__content{
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+  flex-wrap: wrap;
   }
 }
 </style>

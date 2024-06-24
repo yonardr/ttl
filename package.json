@@ -9,7 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "aos-vue": "^0.0.5",
+    "axios": "^1.6.2",
+    "swiper": "^11.1.4",
+    "vue": "^3.4.21",
+    "vue-router": "^4.0.13",
+    "vue-yandex-maps": "^1.1.0",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

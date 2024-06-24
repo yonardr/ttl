@@ -2,17 +2,25 @@
   <article>
     <div class="article__main">
       <div class="a_side">
+        <aos-vue animation="fade-right" :duration="1000" placement="top-bottom">
         <h1 class="title">
           Электролаборатория по ремонту промышленного оборудования
         </h1>
+        </aos-vue>
+        <aos-vue animation="fade-right" :duration="1200" placement="top-bottom">
         <h3 class="description">
           Диагностика и ремонт промышленных регуляторов контактной сварки РКС, промышленное оборудование любой сложности, различных производителей и мощностей, с гарантией 12 месяцев.
         </h3>
+        </aos-vue>
+        <aos-vue animation="fade-right" :duration="1400" placement="top-bottom">
+          <router-link :to="{name: 'main', hash: '#application'}">
         <BlueButton class="btn">Оставить заявку</BlueButton>
+          </router-link>
+        </aos-vue>
       </div>
       <div class="b_side">
         <div class="img__container">
-          <img src="../assets/home/Creative_process_SVG%201.svg" />
+          <img src="../../assets/home/Creative_process_SVG%201.svg" />
         </div>
 
       </div>
@@ -22,21 +30,21 @@
       <div class="advantages">
         <div class="advantages__item">
           <div>
-            <img src="../assets/home/Group%2072.svg"/>
-            <img src="../assets/home/Subtract.svg" style="position: relative; top: -14px; left: -14px"/>
+            <img src="../../assets/home/Group%2072.svg"/>
+            <img src="../../assets/home/Subtract.svg" style="position: relative; top: -14px; left: -14px"/>
           </div>
           <div class="advantages__name">
             Быстрое выполнение заказа
           </div>
         </div>
         <div class="advantages__item">
-          <img src="../assets/home/Group%20292.svg"/>
+          <img src="../../assets/home/Group%20292.svg"/>
           <div class="advantages__name">
             Принимаем оборудование со всей России
           </div>
         </div>
         <div class="advantages__item">
-          <img src="../assets/home/Group%20129.svg"/>
+          <img src="../../assets/home/Group%20129.svg"/>
           <div class="advantages__name">
             Выгодные условия по ремонту
           </div>
@@ -48,10 +56,10 @@
 </template>
 
 <script>
-import BlueButton from "./UI/BlueButton.vue";
-
+import BlueButton from "../UI/BlueButton.vue";
+import AosVue from "aos-vue";
 export default {
-  components: {BlueButton},
+  components: {BlueButton, AosVue},
 setup(){
 
 }
@@ -66,6 +74,7 @@ article{
 .article__main{
   display: flex;
   align-items: center;
+
 }
 .article__footer{
   display: flex;
@@ -127,5 +136,85 @@ article{
       margin-top: 5px;
     }
   }
+}
+
+@media (max-width: 1024px) {
+article{
+  width: 100%;
+  padding: 20px;
+  padding-top: 150px;
+}
+  .article__main{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .a_side{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .b_side{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100px;
+    .img__container{
+      margin-right: 0;
+    }
+    img{
+      opacity: 0.4;
+    }
+  }
+
+  .article__footer{
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .advantages{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 4px 100px 10px #D0DAE357;
+    .advantages__item{
+      margin: 10px;
+      align-items: center;
+    }
+  }
+}
+@media (max-width: 590px) {
+  .a_side{
+    width: 300px;
+    .title{
+      width: 100%;
+      font-size: 34px;
+      line-height: 30px;
+    }
+    .description{
+      width: 100%;
+    }
+
+  }
+
+}
+
+@media (max-width: 350px) {
+  .a_side{
+    width: 280px;
+    .title{
+      width: 100%;
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+  }
+
 }
 </style>

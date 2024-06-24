@@ -1,21 +1,6 @@
-<script setup>
-import HeaderNavBar from "./components/HeaderNavBar.vue";
-import NavigateSelection from "./components/NavigateSelection.vue";
-import HomeView from "./components/HomeView.vue";
-import AdvantagesView from "./components/AdvantagesView.vue";
-</script>
-
 <template>
   <div class="app">
-    <div class="__container">
-      <div class="radial"></div>
-      <HeaderNavBar />
-      <NavigateSelection />
-      <main>
-        <HomeView/>
-        <AdvantagesView />
-      </main>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -53,10 +38,6 @@ body{
   src: local(montserrat), url('./assets/fonts/Gotham_Pro/gothampro_medium.ttf');
 }
 
-.__container{
-  width: 1440px;
-  margin: 0 auto;
-}
 
 h2{
   font-family: GothamBold,serif;
@@ -65,11 +46,5 @@ h2{
   font-size: 32px;
   text-align: center;
 }
-.radial{
-  background: transparent;
-  z-index: -1;
-  border-radius: 100px;
-  box-shadow: -20px 50px 900px 100px #CDBBEF;
-  position: absolute;
-}
+
 </style>
