@@ -1,6 +1,7 @@
 <template>
   <article>
     <h2>Преимущества</h2>
+
     <div class="header__content">
       <div class="__container__phone">
         <div class="message">
@@ -211,10 +212,13 @@ h2 {
 
 .footer__content{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   position: relative;
   top: -200px;
+  margin-bottom: 100px;
   section{
-    width: 236px;
+    width: 180px;
     height: 272px;
     border-radius: 20px;
     margin: 9px;
@@ -230,25 +234,29 @@ h2 {
   }
 }
 @media (max-width: 1024px) {
+
   article{
     height: 100%;
     width: 100%;
+
   }
   .header__content{
+    position: static;
     width: 100%;
     margin: 0;
     align-items: center;
     flex-direction: column;
     padding: 0 20px;
+    .list{
+      display: none;
+    }
   }
   .__container__phone{
     display: none;
   }
-  .list {
-    width: 90%;
-  }
   .footer__content{
-    margin-top: 200px;
+    width: 100%;
+    position: static;
     justify-content: center;
     align-items: center;
   flex-wrap: wrap;

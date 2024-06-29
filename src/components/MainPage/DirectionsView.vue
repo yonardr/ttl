@@ -4,6 +4,7 @@
 <div class="des">
   для всех и для каждого
 </div>
+
     <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
       <router-link :to="{name: 'catalog', hash: '#header'}" style="text-decoration: none" class="section">
     <section class="direction">
@@ -15,37 +16,39 @@
     </section>
       </router-link>
     </aos-vue>
+
     <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
-      <router-link :to="{name: 'catalog', hash: '#header'}" style="text-decoration: none">
-    <section class="direction">
-      <img src="../../assets/directions/undraw_Gift_card_re_5dyy%202.png" />
-      <div>
-      <h1 class="direction__title">Техническое обслуживание</h1>
-      <div class="direction__description">Выполняем сервисное техническое обслуживание автоматики инженерных систем, технологического оборудования и производственных линий. Мы предоставляем услугу на базе постоянного договора на разовые (аварийные) выезды и плановое техническое обслуживание. </div>
-      </div>
-    </section>
+      <router-link :to="{name: 'catalog', hash: '#header'}" style="text-decoration: none" class="section">
+        <section class="direction">
+          <img src="../../assets/directions/undraw_Gift_card_re_5dyy%202.png"/>
+          <div>
+            <h1 class="direction__title">Техническое обслуживание</h1>
+            <div class="direction__description">Выполняем сервисное техническое обслуживание автоматики инженерных систем, технологического оборудования и производственных линий. Мы предоставляем услугу на базе постоянного договора на разовые (аварийные) выезды и плановое техническое обслуживание. </div>
+          </div>
+        </section>
+      </router-link>
+    </aos-vue>
+
+    <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
+      <router-link :to="{name: 'catalog', hash: '#header'}" style="text-decoration: none" class="section">
+        <section class="direction">
+          <img src="../../assets/directions/undraw_Gift_card_re_5dyy%204.png"/>
+          <div>
+            <h1 class="direction__title">Ремонт и модернизация</h1>
+            <div class="direction__description">Услуги по ремонту и модернизации оборудования, производственных линий и станков. Услуги выездного слесаря КИП. Регламентные и сервисные работы. Станки и оборудование. Инженерные системы. Краны и подъемное оборудование</div>
+          </div>
+        </section>
       </router-link>
     </aos-vue>
     <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
-      <router-link :to="{name: 'catalog', hash: '#header'}" style="text-decoration: none">
-    <section class="direction">
-      <img src="../../assets/directions/undraw_Gift_card_re_5dyy%204.png"/>
-      <div>
-      <h1 class="direction__title">Ремонт и модернизация</h1>
-        <div class="direction__description">Услуги по ремонту и модернизации оборудования, производственных линий и станков. Услуги выездного слесаря КИП. Регламентные и сервисные работы. Станки и оборудование. Инженерные системы. Краны и подъемное оборудование</div>
-      </div>
-    </section>
-      </router-link>
-    </aos-vue>
-    <aos-vue animation="zoom-in" :delay="75" placement="top-bottom">
-      <router-link :to="{name: 'catalog', hash: '#header'}" style="text-decoration: none">
-    <section class="direction">
-      <img src="../../assets/directions/undraw_Gift_card_re_5dyy%201.png"/>
-      <div>
-        <h1 class="direction__title">Программирование ПЛК, HMI и SCADA</h1>
-        <div class="direction__description">Ускорьте автоматизацию и оптимизируйте производительность с помощью комплексного решения для программирования промышленных контроллеров (ПЛК), человеко-машинных интерфейсов (HMI) и систем диспетчерского контроля и сбора данных (SCADA). </div>
-      </div>
-    </section>
+      <router-link :to="{name: 'catalog', hash: '#header'}" style="text-decoration: none" class="section">
+        <section class="direction">
+          <img src="../../assets/directions/undraw_Gift_card_re_5dyy%201.png"/>
+          <div>
+            <h1 class="direction__title">Программирование ПЛК, HMI и SCADA</h1>
+            <div class="direction__description">Ускорьте автоматизацию и оптимизируйте производительность с помощью комплексного решения для программирования промышленных контроллеров (ПЛК), человеко-машинных интерфейсов (HMI) и систем диспетчерского контроля и сбора данных (SCADA).</div>
+          </div>
+        </section>
       </router-link>
     </aos-vue>
   </article>
@@ -60,12 +63,13 @@ export default {
 
 <style lang="scss" scoped>
 article{
-  width: 1062px;
+  max-width: 1062px;
   margin: 0 auto;
 }
 .des{
   text-align: center;
 }
+
 .direction{
   display: flex;
   background-color: #fff;
@@ -95,23 +99,29 @@ article{
 @media (max-width: 1070px) {
   article{
     width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
   }
   .direction{
     width: 100%;
     flex-direction: column;
     height: 100%;
-    img{
-      width: 100%;
-      margin-bottom: 10px;
-      margin-right: 0;
-    }
+    padding: 30px;
     .direction__description{
       width: 100%;
     }
+    img{
+      width: 80%;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
     &:hover{
-      padding: 0;
+      padding: 30px;
     }
   }
+
   .section{
     display: flex;
     align-items: center;

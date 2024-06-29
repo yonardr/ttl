@@ -122,4 +122,9 @@ section {
     
   }
 }
+@media (max-width: 1070px) {
+  .wrapper{
+    flex-wrap: wrap;
+  }
+}
 </style>

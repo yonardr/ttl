@@ -14,16 +14,16 @@ import ContactView from "../components/MainPage/ContactView.vue";
 <template>
     <div class="__container">
       <div class="radial"></div>
-      <HeaderNavBar id="header"/>
-      <NavigateSelection />
+        <HeaderNavBar id="header"/>
+        <NavigateSelection />
       <main>
         <HomeView/>
         <AdvantagesView />
         <DirectionsView id="directions"/>
-        <SubmitApplication id="application"/>
+<!--        <SubmitApplication id="application"/>-->
         <TechnicalMaintenance />
-        <ElectronicsRepair />
-        <ContactView id="contact"/>
+<!--        <ElectronicsRepair />-->
+<!--        <ContactView id="contact"/>-->
       </main>
       <footer>
 <!--        <NavigateSelection />-->

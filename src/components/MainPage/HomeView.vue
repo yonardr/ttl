@@ -69,7 +69,7 @@ setup(){
 <style lang="scss" scoped>
 article{
   padding: 0 80px;
-  width: 1280px;
+  max-width: 1280px;
 }
 .article__main{
   display: flex;
@@ -140,9 +140,7 @@ article{
 
 @media (max-width: 1024px) {
 article{
-  width: 100%;
-  padding: 20px;
-  padding-top: 150px;
+padding-top: 200px;
 }
   .article__main{
     flex-direction: column;
@@ -165,6 +163,9 @@ article{
     top: 100px;
     .img__container{
       margin-right: 0;
+      img{
+        width: 100%;
+      }
     }
     img{
       opacity: 0.4;
@@ -184,6 +185,7 @@ article{
     height: 100%;
     box-shadow: 0 4px 100px 10px #D0DAE357;
     .advantages__item{
+      text-align: center;
       margin: 10px;
       align-items: center;
     }
@@ -194,7 +196,7 @@ article{
     width: 300px;
     .title{
       width: 100%;
-      font-size: 34px;
+      font-size: 30px;
       line-height: 30px;
     }
     .description{

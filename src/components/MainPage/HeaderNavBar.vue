@@ -1,5 +1,6 @@
 <template>
-  <header>
+  <div>
+  <header class="scroll">
       <div class="info">
         <router-link :to="{name: 'main', hash: '#header'}">
         <div class="img__container">
@@ -55,6 +56,7 @@
 
 
   </header>
+  </div>
 </template>
 
 <script>
@@ -112,14 +114,13 @@ header{
   background: hsl(0,0%, 100%, 0.1);
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(10px);
-  paddig: 70px 10px 20px 10px;
   transition: all 0.3s ease 0s;
   z-index: 15;
 }
 .menu_table{
   display: block;
   margin: 100px 45% 0 5%;
-  padding: 7px 0px;
+  padding: 7px 0;
   font-size: 25px;
   line-height: 200%;
   list-style: none;
@@ -147,7 +148,7 @@ header{
     display: none;
   }
   .navbar_tel.active{
-    top:0 !important;
+    top:0 ;
   }
   .logo{
     margin-left: 10px;
@@ -199,12 +200,13 @@ header{
       transform: scale(0);
     }
   }
+  .scroll{
+    background : rgb(245, 245, 247);
+    transition: all 0.6s ease 0s;
+    box-shadow: rgba(0, 0, 0, 0.07) 15px 15px 15px 15px;
+  }
 }
 
-.scroll{
-  background : rgb(245, 245, 247);
-  transition: all 0.6s ease 0s;
-  box-shadow: rgba(0, 0, 0, 0.07) 15px 15px 15px 15px;
-}
+
 
 </style>

@@ -3,6 +3,7 @@
   <div class="wrapper">
       <h2>Оставить заявку</h2>
       <div class="card" @submit.prevent="submit">
+        <div>
         <div class="a-side">
           <my-input
               type="text"
@@ -73,6 +74,7 @@
             </div>
           </div>
         </div>
+        </div>
 
       </div>
     <my-dialog v-model:show="dialogVisible">
@@ -82,6 +84,7 @@
         <p>В ближайшее время с Вами свяжется наш специалист</p>
       </div>
     </my-dialog>
+
   </div>
 
   </article>
@@ -151,8 +154,7 @@ export default {
 
 <style scoped lang="scss">
 article{
-  width: 1000px;
-  margin: 0 auto;
+
 }
 h2 {
   margin-top: 90px;
@@ -160,6 +162,7 @@ h2 {
 }
 
 .wrapper {
+  max-width: 1000px;
 
   display: flex;
   flex-direction: column;
@@ -298,6 +301,28 @@ input[type='text'] {
     width: 150px
   }
 }
+
+@media (max-width: 1024px) {
+  .b-side{
+    display: none;
+  }
+  .a-side{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .input{
+      width: 250px;
+    }
+  };
+  .card{
+    width: 400px;
+    justify-content: center;
+  }
+}
+
+
+
 
 @media (max-width: 425px) {
   .card {

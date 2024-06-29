@@ -122,7 +122,7 @@ h2{
 .b-side{
   font-family: GothamMedium,serif;
   width: 400px;
-  box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.07);
+
   border-radius: 20px;
   padding: 30px;
   .field{
@@ -146,6 +146,18 @@ margin: 2px;
   justify-content: left;
   img{
     margin-right:10px;
+  }
+}
+@media (max-width: 1024px) {
+  .__content{
+    flex-direction: column;
+    align-items: center;
+    .map__container{
+      width: 100%;
+    }
+    .b-side{
+width: 100%;
+    }
   }
 }
 </style>
