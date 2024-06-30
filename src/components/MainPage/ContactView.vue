@@ -150,13 +150,26 @@ margin: 2px;
 }
 @media (max-width: 1024px) {
   .__content{
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     .map__container{
-      width: 100%;
+      width: 100% !important;
+      margin-right: 0;
+    }
+    .map{
+      width: 100% !important;
     }
     .b-side{
-width: 100%;
+width: 80% !important;
+      padding: 20px 0;
+      .field{
+        margin: 15px;
+      }
+      .social__icons{
+        margin: 15px;
+      }
     }
   }
 }

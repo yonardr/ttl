@@ -41,4 +41,9 @@ export default {
   border: 1px solid #252B42;
   margin: 5px;
 }
+@media (max-width: 1024px) {
+  .wrapper{
+    padding-top: 150px;
+  }
+}
 </style>

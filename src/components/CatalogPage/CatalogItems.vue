@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div v-for="item in services">
-      <router-link :to="{path: 'catalog' + `/${item.id}`}" style="text-decoration: none">
+      <router-link :to="{path: 'catalog' + `/${item.id}`}" style="text-decoration: none; display: flex; justify-content: center">
       <div class="container__service">
         <div class="service__img">
           <img :src="imgUrl(item.imgs[0].path)" />
@@ -41,6 +41,9 @@ export default {
 <style lang="scss" scoped>
 .wrapper{
    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .container__service{
   display: flex;
@@ -64,6 +67,10 @@ export default {
     overflow-clip-margin: content-box;
     overflow: clip;
   }
+  .service__title{
+    font-weight: bold;
+    font-size: 22px;
+  }
   .service__des{
     min-height: 80px;
     color: #404040;
@@ -76,6 +83,20 @@ export default {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+  }
+}
+@media (max-width: 1024px){
+  .container__service {
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .container__service{
+    width: 80%;
+    height: 80%;
+    img{
+      height: 100%;
+    }
   }
 }
 </style>

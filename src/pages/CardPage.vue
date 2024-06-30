@@ -17,17 +17,10 @@
             :modules="modules"
             class="mySwiper2"
         >
-          <swiper-slide
+          <swiper-slide v-for="item in data.imgs"
           >
-            <img src="../assets/technical/a2fdf39f439e3ea4db8c3d6bf9feda69.jpg" height="527" width="700"/>
+            <img :src="imgUrl(item.path)" />
           </swiper-slide>
-          <swiper-slide
-          >
-            <img src="../assets/technical/a2fdf39f439e3ea4db8c3d6bf9feda69.jpg" height="527" width="700"/>
-          </swiper-slide><swiper-slide
-        >
-          <img src="../assets/technical/a2fdf39f439e3ea4db8c3d6bf9feda69.jpg" height="527" width="700"/>
-        </swiper-slide>
         </swiper>
         <swiper
             @swiper="setThumbsSwiper"
@@ -38,18 +31,11 @@
             :modules="modules"
             class="mySwiper"
         >
-          <swiper-slide
+          <swiper-slide v-for="item in data.imgs"
           >
-            <img src="../assets/technical/a2fdf39f439e3ea4db8c3d6bf9feda69.jpg" height="527" width="700"/>
+            <img :src="imgUrl(item.path)" />
           </swiper-slide>
-          <swiper-slide
-          >
-            <img src="../assets/technical/a2fdf39f439e3ea4db8c3d6bf9feda69.jpg" height="527" width="700"/>
-          </swiper-slide>
-          <swiper-slide
-          >
-            <img src="../assets/technical/a2fdf39f439e3ea4db8c3d6bf9feda69.jpg" height="527" width="700"/>
-          </swiper-slide>
+
         </swiper>
 
         </div>
@@ -69,11 +55,24 @@
         <div @click="changeView" :style="styleView(project)">Документы</div>
       </nav>
     </div>
-    <div class="docs" v-if="docs">
-      {{data.docs}}
+    <div class="docs" v-if="docs" v-for="(item, index) in data.docs">
+<a class="item" :href="imgUrl(item.path)">
+  <img src="../assets/doc-document-svgrepo-com%20(1).svg"/>
+  Документ № {{++index}}
+</a>
     </div>
     <div class="project" v-if="project">
-      {{data.projects}}
+      <div v-for="item in arrayProjects">
+        <div class="title">
+          {{item.title}}
+        </div>
+        <div class="des">
+          {{item.des}}
+        </div>
+        <div class="img" v-for="i in item.imgs">
+          <img :src="imgUrl(i.path)" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -94,13 +93,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 import {FreeMode, Navigation, Thumbs} from 'swiper/modules';
-import {ref} from "vue";
+import {ref, watch} from "vue";
+import {useFetchProject} from "../components/hooks/useFetchProject.js";
 
 export default {
   components: {HeaderNavBar, NavigateSelection, Swiper, SwiperSlide,},
   setup() {
     const {data} = useFetchOne({id: useRoute().params.id})
-    const imageUrl = (value) => new URL(`${process.env.VUE_APP_API_URL}/services/${value}`, import.meta.url).href
+    const imgUrl = (path) => new URL(`${import.meta.env.VITE_APP_API_URL}${path}`, import.meta.url).href
 
     const thumbsSwiper = ref(null);
 
@@ -110,6 +110,15 @@ export default {
 
     const docs = ref(false)
     const project = ref(true)
+
+    const arrayProjects = ref([])
+
+    watch(data, async()=>{
+      await data.value.projects.map(async el =>{
+         arrayProjects.value.push(await useFetchProject({id: el.id}))
+      })
+    })
+
 
     const styleView = (vl) => {
       if(!vl){
@@ -124,8 +133,8 @@ export default {
     }
 
     return {
-      data, imageUrl, thumbsSwiper,
-      setThumbsSwiper, docs, project, changeView, styleView,
+      data, imgUrl, thumbsSwiper,
+      setThumbsSwiper, docs, project, changeView, styleView, arrayProjects,
       modules: [FreeMode, Navigation, Thumbs],
     }
   }
@@ -246,5 +255,57 @@ margin-left: 50px;
   height: 100%;
   object-fit: cover;
 }
+.project{
+  padding: 0 50px;
+  .title{
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .des{
+    margin-bottom: 20px;
+  }
+  img{
+    width: 100%;
+  }
+}
+.docs{
+  padding: 10px 50px;
 
+  .item{
+    font-size: 24px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    color: #273895;
+    img{
+      width: 40px;
+      margin-right: 8px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .__container{
+    width: 100%;
+  }
+  main{
+    padding: 150px 10px;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 877px){
+  main{
+    flex-direction: column;
+  }
+  .container__swiper{
+    width: 100% !important;
+  }
+}
+@media (max-width: 460px){
+  .dls{
+    div{
+      padding: 0 20px !important;
+    }
+  }
+}
 </style>

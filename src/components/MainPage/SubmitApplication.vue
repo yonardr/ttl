@@ -3,12 +3,12 @@
   <div class="wrapper">
       <h2>Оставить заявку</h2>
       <div class="card" @submit.prevent="submit">
-        <div>
+        <div class="content">
         <div class="a-side">
           <my-input
               type="text"
               v-model="form.name.value"
-              placeholder="Имя"
+              placeholder="Фио"
               class="input"
           />
           <my-input
@@ -154,7 +154,9 @@ export default {
 
 <style scoped lang="scss">
 article{
-
+  display: flex;
+justify-content: center;
+  align-items: center;
 }
 h2 {
   margin-top: 90px;
@@ -178,7 +180,11 @@ h2 {
   border-radius: 20px;
   box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.07);
 }
-
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .a-side {
  width: 50%;
 }
@@ -303,6 +309,9 @@ input[type='text'] {
 }
 
 @media (max-width: 1024px) {
+  .card{
+    width: 80% !important;
+  }
   .b-side{
     display: none;
   }

@@ -37,19 +37,16 @@
     <div class="navbar_tel" :class="{active: burger_active}">
       <ul class="menu_table">
         <li>
-          <router-link class="menu_button" :to="{name:'main', hash: '#calc'}" @click="burger_active=!burger_active">Калькулятор</router-link>
+          <router-link class="menu_button" :to="{name:'main', hash: '#header'}" @click="burger_active=!burger_active">Главная</router-link>
         </li>
         <li>
-          <router-link class="menu_button" :to="{name:'main', hash: '#news'}" @click="burger_active=!burger_active">Новости</router-link>
+          <router-link class="menu_button" :to="{name:'catalog', hash: '#header'}" @click="burger_active=!burger_active">Услуги</router-link>
         </li>
         <li>
-          <router-link class="menu_button" to="/documents" @click="burger_active=!burger_active">Документы</router-link>
+          <router-link class="menu_button" :to="{name:'main', hash: '#directions'}" @click="burger_active=!burger_active">Направления</router-link>
         </li>
         <li>
-          <router-link class="menu_button" :to="{name:'main', hash: '#contacts'}" @click="burger_active=!burger_active">Контакты</router-link>
-        </li>
-        <li>
-          <router-link class="menu_button" :to="{name:'main', hash: '#map'}" @click="burger_active=!burger_active">Карта</router-link>
+          <router-link class="menu_button" :to="{name:'main', hash: '#contact'}" @click="burger_active=!burger_active">Контакты</router-link>
         </li>
       </ul>
     </div>

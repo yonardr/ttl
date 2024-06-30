@@ -56,4 +56,23 @@ footer{
     font-weight: bold;
   }
 }
+@media (max-width: 1070px) {
+  footer, .info{
+    margin-top: 20px;
+    flex-direction: column;
+    padding: 0;
+    .descriptions{
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+  }
+  .contacts{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    .phone{
+      margin-right: 0;
+    }
+  }
+
+}
 </style>

@@ -20,14 +20,14 @@ import ContactView from "../components/MainPage/ContactView.vue";
         <HomeView/>
         <AdvantagesView />
         <DirectionsView id="directions"/>
-<!--        <SubmitApplication id="application"/>-->
+        <SubmitApplication id="application"/>
         <TechnicalMaintenance />
-<!--        <ElectronicsRepair />-->
-<!--        <ContactView id="contact"/>-->
+        <ElectronicsRepair />
+        <ContactView id="contact"/>
       </main>
       <footer>
-<!--        <NavigateSelection />-->
-<!--        <FooterNavBar />-->
+        <NavigateSelection />
+        <FooterNavBar />
       </footer>
     </div>
 </template>

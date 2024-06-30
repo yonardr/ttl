@@ -126,5 +126,9 @@ section {
   .wrapper{
     flex-wrap: wrap;
   }
+  section{
+    width: 280px;
+  }
+
 }
 </style>
