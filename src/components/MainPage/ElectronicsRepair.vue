@@ -83,10 +83,11 @@ article{
 
 }
 .swiper {
-  width: 90%;
+  width: 100%;
   height: 500px;
   margin-left: auto;
   margin-right: auto;
+  padding: 30px 0;
 }
 
 .swiper-slide {
@@ -99,18 +100,19 @@ article{
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  padding: 10px;
 }
 ._container_slide{
   display: flex;
   align-items: center;
   img{
-    width: 250px;
+    width: 50%;
     border-radius: 20px;
     margin: 10px;
     height: 200px;
   }
   .title{
+    width: 50%;
+    text-align: left;
     color: #404040;
     font-family: GothamMedium, serif;
   }
