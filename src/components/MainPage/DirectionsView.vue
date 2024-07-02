@@ -109,6 +109,10 @@ article{
     flex-direction: column;
     height: 100%;
     padding: 30px;
+    .direction__title{
+      font-family: "Gotham",serif;
+      font-weight: bold;
+    }
     .direction__description{
       width: 100%;
     }

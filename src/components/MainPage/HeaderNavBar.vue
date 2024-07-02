@@ -130,7 +130,7 @@ header{
 @media (max-width: 1024px) {
   header{
     justify-content: flex-start;
-    min-height: 60px ;
+    max-height: 50px ;
 
 
     position: fixed;
@@ -157,7 +157,7 @@ header{
     left: 90%;
     width: 30px;
     height: 20px;
-    top: 40px;
+    top: 34px;
     z-index: 50;
     span{
       position: absolute;
