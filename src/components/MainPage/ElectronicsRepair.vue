@@ -4,7 +4,7 @@
       Ремонт промышленной электроники
     </h2>
     <swiper
-        :slidesPerView="3"
+        :slidesPerView="count"
         :grid="{
       rows: 2,
     }"
@@ -25,10 +25,10 @@
         </div>
         </router-link>
       </swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
+<!--      <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>-->
+<!--      <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>-->
+<!--      <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>-->
+<!--      <swiper-slide>Slide 8</swiper-slide>-->
     </swiper>
   </article>
 </template>
@@ -41,6 +41,7 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 import {useFetchFromType} from "../hooks/useFetchFromType.js";
+import {onMounted, onUnmounted, ref} from "vue";
 export default {
   components: {
     Swiper,
@@ -51,8 +52,22 @@ export default {
 
     const imgUrl = (path) => new URL(`${import.meta.env.VITE_APP_API_URL}${path}`, import.meta.url).href
 
+    const count = ref(3)
+    onMounted(()=>{
+      if(window.innerWidth > 768) count.value = 3
+      if(window.innerWidth < 768) count.value = 1
+      window.addEventListener("resize", myEventHandler);
+    })
+    onUnmounted(()=>{
+      window.removeEventListener("resize", myEventHandler);
+    })
+    function myEventHandler(e) {
+      if(window.innerWidth > 768) count.value = 3
+      if(window.innerWidth < 768) count.value = 1
+    }
+
     return {
-      data, imgUrl,
+      data, imgUrl, count,
       modules: [Grid, Pagination],
     }
   }
@@ -68,7 +83,7 @@ article{
 
 }
 .swiper {
-  width: 100%;
+  width: 90%;
   height: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -99,5 +114,12 @@ article{
     font-family: GothamMedium, serif;
   }
 }
-
+@media (max-width: 768px) {
+  ._container_slide{
+    img{
+      width: 50%;
+      height: 50%;
+    }
+  }
+}
 </style>

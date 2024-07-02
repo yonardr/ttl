@@ -45,7 +45,9 @@
           {{data.title}}
         </div>
         <div class="des">
-          {{data.des}}
+          <pre>
+            {{data.des}}
+          </pre>
         </div>
       </div>
     </main>
@@ -266,7 +268,7 @@ margin-left: 50px;
     margin-bottom: 20px;
   }
   img{
-    width: 100%;
+    width: 50%;
   }
 }
 .docs{
@@ -283,6 +285,16 @@ margin-left: 50px;
       margin-right: 8px;
     }
   }
+}
+pre{
+  font-family: Gotham, serif;
+  word-wrap: normal;
+  white-space: pre-wrap;
+  display: block;
+  height: auto;
+  line-height: 1.4;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 @media (max-width: 1024px) {
   .__container{

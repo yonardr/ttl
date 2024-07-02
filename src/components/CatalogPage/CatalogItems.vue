@@ -8,9 +8,12 @@
         </div>
         <div class="service__title">{{item.title}}</div>
         <div class="service__des">
-          <p class="demo-1">adsdSAdasSADdasASDsdaASDasdSDAsadSADasdASDsad{{item.des}}</p>
+          <p class="demo-1">{{item.des}}</p>
           </div>
-        <BlueButton>Подробнее</BlueButton>
+        <div class="btn">
+          <BlueButton>Подробнее</BlueButton>
+        </div>
+
       </div>
       </router-link>
     </div>
@@ -51,7 +54,7 @@ export default {
   align-items: center;
   box-shadow: 11px 11px 11px 11px rgba(0, 0, 0, 0.07);
   border-radius: 20px;
-  height: 310px;
+  height: 350px;
   padding: 10px;
   justify-content: space-between;
   margin: 20px;
@@ -69,20 +72,28 @@ export default {
   }
   .service__title{
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
+    text-align: center;
   }
   .service__des{
-    min-height: 80px;
     color: #404040;
     text-align: center;
     line-height: 120%;
   }
   .demo-1 {
-    width: 200px;
+    width: 100%;
+    max-height: 40px;
+    text-align: center;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+  }
+  .btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 10px;
   }
 }
 @media (max-width: 1024px){

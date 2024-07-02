@@ -34,6 +34,9 @@ export default {
 <style lang="scss" scoped>
 .wrapper{
   display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 5px;
 }
 .container__type{
   border-radius: 20px;
