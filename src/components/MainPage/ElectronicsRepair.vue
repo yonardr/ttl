@@ -99,6 +99,7 @@ article{
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  padding: 10px;
 }
 ._container_slide{
   display: flex;
@@ -115,6 +116,9 @@ article{
   }
 }
 @media (max-width: 768px) {
+  .swiper-slide {
+    font-size: 16px;
+  }
   ._container_slide{
     img{
       width: 50%;
