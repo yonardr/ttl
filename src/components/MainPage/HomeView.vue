@@ -82,7 +82,7 @@ article{
 }
 .a_side{
   width: 100%;
-  z-index: 99999;
+  z-index: 2;
   .title{
     font-family: GothamBold,serif;
     color: #262626;
