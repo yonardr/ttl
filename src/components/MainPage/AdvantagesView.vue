@@ -260,7 +260,11 @@ h2 {
     justify-content: center;
     align-items: center;
   flex-wrap: wrap;
-
+    section{
+      width: 200px;
+      height: 100%;
+      padding: 30px;
+    }
   }
   .icon__container{
     margin-bottom: 5px !important;

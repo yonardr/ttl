@@ -141,6 +141,11 @@ header{
     width: 100%;
     padding: 20px;
   }
+  .img__container{
+    img{
+      width: 150px;
+    }
+  }
   .descriptions, .contacts{
     display: none;
   }
