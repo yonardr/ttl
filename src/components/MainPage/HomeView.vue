@@ -82,6 +82,7 @@ article{
 }
 .a_side{
   width: 100%;
+  z-index: 99999;
   .title{
     font-family: GothamBold,serif;
     color: #262626;
@@ -103,6 +104,7 @@ article{
 }
 .b_side{
   width: 100%;
+  z-index: 0;
   .img__container{
     display: flex;
     justify-content: center;
