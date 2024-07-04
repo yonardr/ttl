@@ -27,7 +27,7 @@
     </div>
 
     <div class="article__footer">
-      <div class="advantages">
+        <aos-vue animation="zoom-in" :duration="1000" placement="top-bottom" class="advantages">
         <div class="advantages__item">
           <div>
             <img src="../../assets/home/Group%2072.svg"/>
@@ -49,7 +49,8 @@
             Выгодные условия по ремонту
           </div>
         </div>
-      </div>
+        </aos-vue>
+
     </div>
 
   </article>
@@ -123,7 +124,9 @@ article{
   background-color: #F4F7FA;
   display: flex;
   padding: 5px 40px;
-  box-shadow: 0 4px 100px 100px #D0DAE357;
+  transition: 0.7s !important;
+  box-shadow: 0 13px 40px 10px #BBA6FF78;
+  //box-shadow: 0 4px 100px 100px #D0DAE357;
   .advantages__item{
     display: flex;
     justify-content: center;
@@ -137,6 +140,10 @@ article{
       color: #303030;
       margin-top: 5px;
     }
+  }
+  &:hover{
+    transition: 0.7s;
+    padding: 15px 40px;
   }
 }
 

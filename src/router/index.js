@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Main from "../pages/MainPage.vue";
 import CatalogPage from "../pages/CatalogPage.vue";
 import CardPage from "../pages/CardPage.vue";
+import NotFound from "../components/NotFound.vue";
 
 
 
@@ -20,6 +21,10 @@ const routes = [
     {
         path: '/catalog/:id',
         component: CardPage
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        component: Main,
     },
 ]
 

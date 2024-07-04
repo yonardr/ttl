@@ -81,6 +81,9 @@ article{
   img{
     margin-right: 39px;
     width: 220px;
+    border: 1px solid #BBA6FF78;
+    box-shadow: 0 4px 50px 10px #BBA6FF78;
+    border-radius: 15px;
   }
   .direction__title{
     font-family: "Gotham Pro Medium",serif;

@@ -63,6 +63,7 @@
         <div>
           г. Казань, ул. Спартаковская, 2
         </div>
+          Находимся в ИТ-парк им. Башира Рамеева, технопарк, Спартаковская 2.
         </div>
         <div class="social__icons">
           <img src="../../assets/application/tild3164-3566-4132-b230-623461383964__vk_1.svg" />
@@ -124,7 +125,8 @@ h2{
   width: 400px;
 
   border-radius: 20px;
-  padding: 30px;
+  padding: 0 30px;
+  padding-top: 13px;
   .field{
     margin-bottom: 13px;
     color: #737373;
