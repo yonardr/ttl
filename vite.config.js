@@ -55,19 +55,15 @@ export default defineConfig({
       // The following files are not packaged
       external: [
         "vue",
-        "element-plus",
         "axios",
         "vue-router",
-        "echarts",
       ],
       plugins: [
         // When packing, automatically replace the introduction in the code to CDN to introduce
         externalGlobals({
           vue: "Vue",
-          "element-plus": "ElementPlus",
           axios: "axios",
           "vue-router": "VueRouter",
-          echarts: "echarts",
         }),
       ],
       output: {
