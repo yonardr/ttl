@@ -128,6 +128,9 @@ section {
   }
   section{
     width: 280px;
+    .title{
+      text-align: center;
+    }
   }
 
 }

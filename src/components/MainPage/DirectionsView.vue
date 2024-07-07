@@ -112,12 +112,15 @@ article{
     flex-direction: column;
     height: 100%;
     padding: 30px;
+    align-items: center;
     .direction__title{
       font-family: "Gotham",serif;
       font-weight: bold;
+      text-align: center;
     }
     .direction__description{
       width: 100%;
+      text-align: center;
     }
     img{
       width: 80%;
