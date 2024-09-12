@@ -18,6 +18,7 @@ button {
   border: 1px solid #273895;
   font-family: GothamMedium, serif;
   font-size: 16px;
+  cursor: pointer;
 }
 
 button:hover {

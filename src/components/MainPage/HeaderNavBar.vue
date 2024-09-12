@@ -108,9 +108,9 @@ header{
   left: 0;
   width: 100%;
   height: 100%;
-  background: hsl(0,0%, 100%, 0.1);
-  backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(10px);
+  background: hsla(0, 20%, 4%, 0.1);
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s ease 0s;
   z-index: 15;
 }
@@ -118,7 +118,7 @@ header{
   display: block;
   margin: 100px 45% 0 5%;
   padding: 7px 0;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 200%;
   list-style: none;
 }
@@ -139,9 +139,10 @@ header{
     transition: all 0.6s ease 0s;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 0px 0px;
     width: 100%;
-    padding: 20px;
+    padding: 20px 0px;
   }
   .img__container{
+    margin-left: 20px;
     img{
       width: 150px;
     }

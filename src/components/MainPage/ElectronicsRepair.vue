@@ -54,16 +54,16 @@ export default {
 
     const count = ref(3)
     onMounted(()=>{
-      if(window.innerWidth > 768) count.value = 3
-      if(window.innerWidth < 768) count.value = 1
+      if(window.innerWidth > 1024) count.value = 3
+      if(window.innerWidth < 1024) count.value = 1
       window.addEventListener("resize", myEventHandler);
     })
     onUnmounted(()=>{
       window.removeEventListener("resize", myEventHandler);
     })
     function myEventHandler(e) {
-      if(window.innerWidth > 768) count.value = 3
-      if(window.innerWidth < 768) count.value = 1
+      if(window.innerWidth > 1024) count.value = 3
+      if(window.innerWidth < 1024) count.value = 1
     }
 
     return {
@@ -117,15 +117,41 @@ article{
     font-family: GothamMedium, serif;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .swiper{
+    width: 80%;
+  }
   .swiper-slide {
     font-size: 16px;
   }
   ._container_slide{
+    width: 600px;
+    //flex-direction: column;
     img{
-      width: 50%;
-      height: 50%;
+      height: 150px;
     }
+    .title{
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+@media (max-width: 768px) {
+  ._container_slide{
+    flex-direction: column;
+    width: 330px;
+    .title{
+      font-size: 14px;
+      width: 200px;
+      height: 50px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .swiper {
+    padding: 50px 0;
   }
 }
 </style>

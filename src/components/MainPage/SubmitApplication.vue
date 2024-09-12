@@ -25,6 +25,7 @@
               :class="{invalid: !form.tel.valid && form.tel.touched}"
               @blur="form.tel.blur"
               :type="'main'"
+              v-phone
           />
           <small v-if="form.tel.touched && form.tel.errors.required" style="color:#ff7b47; margin-left: 10px">Введите
             номер телефона</small>
@@ -267,7 +268,9 @@ h2 {
 input[type='text'] {
   font-size: 16px;
 }
-
+textarea{
+  width: 510px !important;
+}
 .invalid {
   border-color: #000000;
 }
@@ -328,21 +331,20 @@ input[type='text'] {
     width: 400px;
     justify-content: center;
   }
+  textarea{
+    width: 89% !important;
+  }
 }
 
 
 
 
 @media (max-width: 425px) {
+  .wrapper{
+    width: 100%;
+  }
   .card {
     padding: 15px 25px;
-  }
-  .upload {
-    flex-direction: column;
-
-    .file-dummy {
-      margin: 5px;
-    }
   }
 }
 

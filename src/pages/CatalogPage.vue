@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .radial{
   background: transparent;
-  z-index: -1;
+  z-index: -10;
   border-radius: 100px;
   box-shadow: -20px 50px 900px 100px #CDBBEF;
   position: absolute;

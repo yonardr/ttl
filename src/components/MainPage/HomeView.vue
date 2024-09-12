@@ -29,22 +29,26 @@
     <div class="article__footer">
         <aos-vue animation="zoom-in" :duration="1000" placement="top-bottom" class="advantages">
         <div class="advantages__item">
-          <div>
-            <img src="../../assets/home/Group%2072.svg"/>
-            <img src="../../assets/home/Subtract.svg" style="position: relative; top: -14px; left: -14px"/>
+          <div style="width: 50px; height: 40px">
+              <img src="../../assets/home/Group%2072.svg"/>
+              <img src="../../assets/home/Subtract.svg" class="clock"/>
           </div>
           <div class="advantages__name">
             Быстрое выполнение заказа
           </div>
         </div>
         <div class="advantages__item">
-          <img src="../../assets/home/Group%20292.svg"/>
+          <div>
+            <img src="../../assets/home/Group%20292.svg"/>
+          </div>
           <div class="advantages__name">
             Принимаем оборудование со всей России
           </div>
         </div>
         <div class="advantages__item">
-          <img src="../../assets/home/Group%20129.svg"/>
+          <div>
+            <img src="../../assets/home/Group%20129.svg"/>
+          </div>
           <div class="advantages__name">
             Выгодные условия по ремонту
           </div>
@@ -200,6 +204,9 @@ padding-top: 200px;
     }
   }
 }
+.clock{
+  position: relative; left: 27px; bottom: 47px;
+}
 @media (max-width: 590px) {
   .a_side{
     width: 300px;
@@ -213,6 +220,13 @@ padding-top: 200px;
     }
 
   }
+  .advantages__item{
+      display: flex;
+      align-items: center;
+    .clock{
+      left: 17px; bottom: 47px;
+    }
+   }
 
 }
 
@@ -221,7 +235,7 @@ padding-top: 200px;
     width: 280px;
     .title{
       width: 100%;
-      font-size: 30px;
+      font-size: 28px;
       line-height: 30px;
     }
 

@@ -105,10 +105,10 @@ section {
   padding: 32px;
   margin: 16px;
   transition: 1s;
-&:hover{
-  transition: 1s;
-  padding: 42px;
-}
+//&:hover{
+//  transition: 1s;
+//  padding: 42px;
+//}
   img {
     border-radius: 20px;
     width: 100%;
@@ -124,10 +124,11 @@ section {
 }
 @media (max-width: 1070px) {
   .wrapper{
+    width: 100%;
     flex-wrap: wrap;
   }
   section{
-    width: 280px;
+    width: 250px;
     .title{
       text-align: center;
     }

@@ -156,18 +156,21 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 13px 40px 10px #BBA6FF78;
   font-family: GothamMedium, serif;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #000;
-
+  text-align: center;
   .btn {
     margin-top: 6px;
     font-family: GothamMedium, serif;
-    font-size: 12px;
+    font-size: 14px;
     background: linear-gradient(to right, #2641D1 0%, #3333A3 100%), linear-gradient(to right, #784DFF 0%, #4614E8 100%);
+    &:hover{
+      color: #fff;
+    }
   }
 }
 
@@ -190,14 +193,14 @@ h2 {
 .list {
   width: 438px;
   line-height: 150%;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 10px;
 
   .title {
     margin-left: 25px;
     font-family: GothamBold, serif;
     color: #34449C;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 44px;
     letter-spacing: 3px;
   }
@@ -215,7 +218,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  top: -200px;
+  top: -188px;
   margin-bottom: 100px;
   section{
     width: 180px;
